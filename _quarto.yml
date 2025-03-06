@@ -1,0 +1,81 @@
+project:
+  type: book
+  output-dir: _book
+  
+lang: de
+
+book:
+  title: "Grundlagen der Elektrotechnik 1"
+  author:
+    - name: Mirco Meiners
+      orcid: 0000-0002-9709-4191
+      email: Mirco.Meiners@hs-bremen.de
+      corresponding: true
+      roles: "Lead author"
+      affiliation:
+        - name: Hochschule Bremen - City University of Applied Sciences (HSB)
+          city: Bremen
+          state: Germany
+          url: https://www.hs-bremen.de/person/mimeiners/ 
+  date: last-modified
+  license: "Apache-2.0 license"
+
+  reader-mode: true
+
+  page-footer:
+    left: |
+      Grundlagen der Elektrotechnik 1 (GEL1), M. Meiners, HSB.
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+#  cover-image: images/hsb-logo.png
+#  favicon: images/hsb-logo.png
+  site-url: https://mimeiners.github.io/gel1/
+  repo-url: https://github.com/mimeiners/gel1/
+  repo-branch: main
+  repo-actions: [edit, issue]
+  downloads: [pdf,epub]
+
+  chapters:
+    - index.qmd
+    - part: Seminar
+      chapters:
+        - class/01_lec.qmd
+    - part: Hörsaalübungen 
+      chapters:
+        - exercise/01_hw.ipynb
+    - part: Tutorium
+      chapters:
+        - tutorial/01_tut.qmd
+    - references.qmd
+    
+bibliography: _bibliography/references.bib
+
+filters:
+  - admonitions
+  
+format:
+  html:
+    theme: flatly
+  pdf:
+    documentclass: scrbook # scrreptrt
+#    lof: true
+#    lot: true
+    toc: true    
+    geometry:
+      - top=30mm
+      - left=20mm
+      - heightrounded
+    hyperrefoptions:
+      - linktoc=all
+    colorlinks: true
+    linkcolor: "blue"
+    biblio-style: ieee
+    #    keep-tex: true
+    output-file: elk
+  epub:
+    theme: flatly
+    output-file: elk
+  
+execute:
+  freeze: auto
+
