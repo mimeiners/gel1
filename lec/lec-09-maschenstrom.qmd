@@ -1,0 +1,200 @@
+## Maschenstromverfahren {#sec:maschenstromanalyse}
+
+::: frame
+### Maschenstrom
+
+Bei der [Maschenstrom-]{.alert} oder kurz [Maschenanalyse]{.alert} (mesh
+analysis) wird in jeder unabhängigen Masche ein Maschenstrom $I_m$
+(Symbolindex m, Masche) als Unbekannte eingeführt. Er fließt als
+Umlaufstrom nur in einer unabhängigen Masche. Seine Richtung wird frei
+gewählt und durch einen Ringpfeil ausgedrückt.
+
+![image](../fig/lec09s431.pdf){width="\\textwidth"}
+:::
+
+::: frame
+### Lösungsethodik Maschenstromanalyse
+
+1.  Ermittlung der Zahl unabhängiger Maschen $m$ (nach der Methode des
+    vollständigen Baumes oder anderer Verfahren). []{#enum:1
+    label="enum:1"}
+
+2.  Einführung eines Maschenstromes in jeder unabhängigen Masche mit
+    beliebiger Umlaufrichtung. []{#enum:2 label="enum:2"}
+
+3.  Aufstellen der Maschengleichung ($\sum U=0$) für jede unabhängige
+    Masche (in Umlaufrichtung des Maschenstromes). Spannungsabfälle über
+    den Netzwerkelementen durch Maschenströme ausdrücken. []{#enum:3
+    label="enum:3"}
+
+4.  Darstellung der gesuchten Zweigströme durch ihre Maschenströme.
+    []{#enum:4 label="enum:4"}
+
+5.  Auflösung des Gleichungssystems
+    [\[enum:3\]](#enum:3){reference-type="ref+label" reference="enum:3"}
+    nach den Maschenströmen, die gemäß
+    [\[enum:4\]](#enum:4){reference-type="ref+label" reference="enum:4"}
+    erforderlich sind.
+:::
+
+::: frame
+### Beispiel Maschenstromanalyse
+
+![image](../fig/lec09s432.pdf){width="\\textwidth"}
+
+$$\begin{aligned}
+    \begin{split}
+      M1 &: \quad R_1I_{m1} + R_2(I_{m1}-I_{m3}) + R_3(I_{m1}+I_{m2}) \quad = 0 \\
+      M2 &: \quad R_4I_{m2} + R_5(I_{m2}+I_{m3}) + R_3(I_{m1}+I_{m2}) \quad = 0 \\
+      M3 &: \quad R_6I_{m3} + R_5(I_{m2}+I_{m3}) + R_2(I_{m3}-I_{m1}) \quad = Uq
+    \end{split}
+  
+\end{aligned}$$ $$\begin{aligned}
+    \begin{pmatrix}
+      R_1+R_2+R_3 & R_3 & -R_2 \\
+      R_3 & R_3+R_4+R_5 & R_5 \\
+      -R_2 & R_5 & R_2+R_5+R_6
+    \end{pmatrix}
+                   \begin{pmatrix}
+                     I_{m1} \\ I_{m2} \\ I_{m3}
+                   \end{pmatrix}
+                  &=
+                    \begin{pmatrix}
+                      0 \\ 0 \\ U_{q}
+                    \end{pmatrix} \\
+    \begin{pmatrix}
+      R_{11} & \cdots & R_{1n} \\
+       \vdots & \ddots &  \vdots \\
+       R_{n1} & \cdots & R_{nn}
+     \end{pmatrix}
+                         \begin{pmatrix}
+                           I_{m1} \\ \vdots \\ I_{mn}
+     \end{pmatrix}
+                  &= 
+                    \begin{pmatrix}
+                      U_{q1} \\ \vdots \\ U_{qn}
+                    \end{pmatrix}
+  
+\end{aligned}$$
+:::
+
+::: frame
+### Maschenwiderstandsmatrix
+
+1.  Führe Maschenströme $I_{m1} \hdots I_{mn}$ in unabhängigen Maschen
+    ein (Umlauf beliebig).
+
+2.  Stelle ein Schema für die $n$ Maschenströme (Spalten) und $n$
+    Maschen (Zeilen) auf.
+
+3.  Trage die Ringwiderstände $R_{ii}$ der zu den Zeilen gehörigen
+    Maschen in den Hauptdiagonalelementen ein.
+
+4.  Füge die Koppelwiderstände $R_{ij}$ auf den Nebendiagonalen ein
+    ($R_{ij}$ positiv (negativ), wenn beide Maschenströme $I_{mi}$,
+    $I_{mj}$ den Widerstand in gleicher (entgegengesetzter) Richtung
+    durchfließen.
+
+5.  Beachte die Symmetrie der Matrix ($R_{ij} = R_{ji}$).
+:::
+
+:::: frame
+### Zweigströme und Zweigspannungen
+
+![image](../fig/lec09s434.pdf){width="\\textwidth"}\
+$$\begin{aligned}
+    \begin{pmatrix}
+      I_1 \\ I_2 \\ I_3 \\ I_4 \\ I_5 \\ I_6
+    \end{pmatrix}
+    &= 
+      \begin{pmatrix}
+        1 & 0 & -1 \\
+        -1 & 1 & 0 \\
+        0 & 1 & -1 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1 \\
+        1 & 0 & 0
+      \end{pmatrix}
+                \begin{pmatrix}
+                  I_{m1} \\ I_{m2} \\ I_{m3}
+                \end{pmatrix} 
+    & \quad
+      \begin{pmatrix}
+        1 & -1 & 0 & 0 & 0 & 1 \\
+        0 & 1 & 1 & 1 & 0 & 0 \\
+        -1 & 0 & -1 & 0 & 1 & 0
+      \end{pmatrix}
+                              \begin{pmatrix}
+                                U_1 \\ U_2 \\ U_3 \\ U_4 \\ U_5 \\ U_6
+                              \end{pmatrix}
+    &=
+      \begin{pmatrix}
+        0 \\ 0 \\ 0
+      \end{pmatrix}
+  
+\end{aligned}$$
+
+::: block
+Maschensatz $$\begin{aligned}
+      \mathbf{I} &= \mathbf{C} \mathbf{I}_m \\
+      \mathbf{0} &= \mathbf{M} \mathbf{U}_z \\
+                 &= \mathbf{C}^T \mathbf{U}_z
+    
+\end{aligned}$$
+:::
+::::
+
+::: frame
+### Beispiel Unabhängige Maschen
+
+Gesucht ist der Zweigstrom durch $R_2$. Wir vertiefen die Analyse der
+Schaltung mit $k=4$ Knoten, $z=6$ Zweigen und $m=6-3=3$ unabhängigen
+Maschen, entweder durch Zeichnen eines vollständigen Baumes oder direkt
+aus der Schaltung.
+
+1.  Der vollständige Baum ergibt $m=3$ unabhängige Zweige als
+    Baumkomplement.
+
+2.  Es werden drei unabhängige Maschenströme in den Maschen mit je einem
+    unabhängigen Zweig (= Verbindungszweig) eingeführt.
+
+3.  $$\begin{aligned}
+          \begin{pmatrix}
+            R_1+R_2+R_6 & -R_2 & -R_1 \\
+            -R_2 & R_2+R_3+R_4 & -R_3 \\
+            -R_1 & -R_3 & R_1+R_3+R_5
+          \end{pmatrix}
+                          \begin{pmatrix}
+                            I_{m1} \\ I_{m2} \\ I_{m3}
+                          \end{pmatrix}
+                        &=
+                          \begin{pmatrix}
+                            U_{q1}-U_{q2} \\ U_{q2} \\ -U_{q3}
+                          \end{pmatrix}
+          \label{eq:1}
+        
+    \end{aligned}$$
+
+4.  Der gesuchte Zweigstrom durch $R_2$ erfordert die Beziehungen
+    zwischen Zweig- und Maschenströmen. Es gibt 6 Zweigströme, davon 3
+    Maschenströme. Der Schaltung oder auch der
+    Zweig-Maschen-Inzidenzmatrix $\mathbf{C}$ entnimmt man
+    $I_2=I_{m2}-I_{m1}$.
+
+5.  Im letzten Schritt lösen wir das Gleichungssystem
+    [\[eq:1\]](#eq:1){reference-type="ref+label" reference="eq:1"} nach
+    $I_{m2}$ und $I_{m1}$ auf und berechnen den Zweigstrom $I_2$.
+:::
+
+::: frame
+### Maschenstromgleichung
+
+$$\begin{aligned}
+    \mathbf{R} \mathbf{I}_m &= \mathbf{U}_{qm} \\
+    \mathbf{I}_m &= \mathbf{R}^{-1} \mathbf{U}_{qm} \\
+    \mathbf{C} \mathbf{I}_m &= \mathbf{C} \mathbf{R}^{-1} \mathbf{U}_{qm} \\
+    \mathbf{I} &= \mathbf{C} \mathbf{R}^{-1} \mathbf{U}_{qm} \\
+    \mathbf{I} &= \mathbf{M}^T \mathbf{R}^{-1} \mathbf{U}_{qm}
+  
+\end{aligned}$$
+:::

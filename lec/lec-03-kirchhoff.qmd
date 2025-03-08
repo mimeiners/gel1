@@ -1,0 +1,207 @@
+# Kirchhoffschen Gesetze {#sec:kirchh-gesetze}
+
+::: frame
+### Knotensatz
+:::
+
+:::: frame
+### Maschensatz
+
+::: definition
+$$\begin{aligned}
+      \oint \mathbf{E} \cdot \di\mathbf{s} &= \sum_{n=1}^m U_n = 0
+    
+\end{aligned}$$
+:::
+::::
+
+## Elektrische Energie, elektrische Leistung {#sec:elektr-energ}
+
+::: frame
+### Elektrische Energie
+:::
+
+::: frame
+### Größenvorstellung der elektrischen Energie
+:::
+
+::: frame
+### Elektrische Leistung
+:::
+
+::: frame
+### Größenvorstellung der elektrischen Leistung
+:::
+
+# Einfache resistive Stromkreise und Netzwerkelemente {#sec:einf-resist-stromkr}
+
+## Modelle elektrischer Stromkreise {#sec:modelle-elektr-strom}
+
+::::: frame
+### Elektrischer Stromkreis
+
+#### Modellbildung
+
+::: block
+Grundlagen der Netzwerkanalyse
+
+-   Bauelementemodelle durch Netzwerkelemente ersetzen
+
+-   Analyseverfahren, die die Klemmenbeziehungen nutzen
+:::
+
+::: block
+Merkmale der Modellierung
+
+-   Abbildung der Systemaufgabe
+
+-   Bauelemente zu einer Schaltung mit Stromknoten und Maschen
+    zusammenfügen
+
+-   Schaltplan mit Schaltzeichen
+:::
+:::::
+
+:::: frame
+### Systemaufgaben - Aufgabenstellung
+
+::: block
+Beispiel Elektromagnetische Strahlung in Form von Sonnenlicht soll
+elektrisch den Keller eines Gebäudes beleuchten: durch eine
+Lumineszenzdiode, eine größere LED oder eine Minileuchtstoffröhre. Bei
+Abschalten muss die LED noch eine Weile nachleuchten.
+:::
+::::
+
+::: frame
+### Systemaufgabe - Netzwerkmodell
+
+![image](../fig/lec03s311){width="\\textwidth"}
+:::
+
+::::: frame
+### Elektrisches Netzwerk
+
+::: definition
+Ein Netzwerk ist eine modellhafte (mathematische) Abbildung einer
+Schaltung. Seine Ströme und Spannungen werden durch die
+Klemmenbeziehungen der Netzwerkelemente und ihre Zusammenschaltung, die
+[Topologie]{.alert} oder [Netzwerkstruktur]{.alert} bestimmt. Dabei
+gelten die Kirchhoffschen Gleichungen zu jedem Zeitpunkt.
+:::
+
+::: block
+Modelle
+
+-   Strom- und Spannungsquellen, aktiver Zweipol
+
+-   Reistiver Zweipol
+
+-   Zusammenschaltung aktiver und passiver Zweipole zum Grundstromkreis
+
+-   Gesteuerte Quellen, Mehrpole
+:::
+:::::
+
+## Unabhängige Spannungs- und Stromquellen {#sec:unabh-spann-und}
+
+::: frame
+### Zweipolbegriff
+
+-   [aktive Zweipole]{.alert}, die elektrische Energie abgeben
+
+-   [passive Zweipole]{.alert}, die elektrische Energie aufnehmen
+
+    -   Energiewandler, weil außer Wärme auch eine andere Energieform
+        bereitgestellt werden kann
+
+    -   ohmscher Widerstand oder resistiver Zweipol
+
+-   [Verbraucher-Erzeuger-Zählpfeilsystem]{.alert}
+
+-   [Klemmen]{.alert}- oder $U,I$-Verhalten
+:::
+
+::: frame
+### Quellen
+
+-   Umformorte nichtelektrischer in elektrische Energie, z.B.
+    Generatoren, Batterien, Thermoelemente, Solar- und Brennstoffzellen
+
+-   Orte, an denen elektrische Energie einer Form in eine andere
+    gewandelt wird (Beispiele: Gleichspannung durch Gleichrichtung der
+    Netzspannung)
+
+-   Lineare Spannungs- oder Stromquellen
+
+-   Nichtlineare Spannungs- oder Stromquellen
+
+-   Quellen begrenzter Linearität, Spannung/Strom ist in einem großen
+    Bereich lastunabhängig und erst von einem bestimmten Grenzwert an
+    setzt starker Abfall ein.
+
+    -   Solarzellen
+
+    -   elektronische Netzgeräte mit Strombegrenzung
+:::
+
+::: frame
+### $U,I$-Kennlinien idealer und nichtidealer Quellen
+
+![image](../fig/lec03s321){width="\\textwidth"}
+:::
+
+### Ideale Spannungs- und Stromquellen {#sec:ideale-quellen}
+
+::: frame
+### Ideale Spannungs- und Stromquellen {#ideale-spannungs--und-stromquellen}
+
+![image](../fig/lec03s322){width="\\textwidth"}
+:::
+
+::: frame
+### Zusammenschaltung idealer Quellen
+
+![image](../fig/lec03s323){width="\\textwidth"} $$\begin{aligned}
+    U_q &= \sum_{\nu=1}^{n} U_{q\nu} \quad \mbox{Reihenschaltung idealer Spannungsquellen} \\
+    I_q &= \sum_{\nu=1}^{n} I_{q\nu} \quad \mbox{Parallelschaltung idealer Stromquellen}
+  
+\end{aligned}$$
+:::
+
+### Reale Spannungs- und Stromquellen {#sec:reale-quellen}
+
+::: frame
+### Modellierung realer Quellen
+
+-   Spannungsquellen mit stromabhängigem inneren Spannungsabfall
+    $U_i(I)$ durch den linearen/nichtlinearen Innenwiderstand $R_i$
+
+-   Stromquellen mit (spannungsabhängigem) inneren Stromverlust $I_i(U)$
+    durch den linearen/nichtlinearen Innenleitwert $G_i$
+
+![image](../fig/lec03s324){width="\\textwidth"} $$\begin{aligned}
+    U &= U_q - I R_i, \quad I\lvert_{U=0} =I_k=\frac{U_q}{R_i}, \quad\mbox{Kurzschluss} \\
+    I &= I_q - I G_i, \quad U\lvert_{I=0} =U_l=\frac{I_q}{G_i}, \quad\mbox{Leerlauf} 
+\end{aligned}$$
+:::
+
+::: frame
+### Zusammenschaltung lineare Spannungs- und Stromquellen 
+
+$$\begin{aligned}
+    U_{qers} &= \sum_{\nu=1}^{n} U_{q\nu}, \quad R_{ers}= \sum_{\nu=1}^{n} R_{\nu}, \quad\mbox{Reihenschaltung} \\
+    U_{qers} &= I_{qers} R_{ers} = \frac{\sum_{\nu=1}^{n} I_{k\nu}}{\sum_{\nu=1}^{n} G_{i\nu}}, \quad\mbox{Parallelschaltung} \\
+    \frac{1}{R_{ers}} &=\sum_{\nu=1}^{n} \frac{1}{R_{\nu}} = G_{ers} =\sum_{\nu=1}^{n} G_{i\nu} \\[1ex]
+    U_q &= \frac{I_q}{G_i}, \quad I_q=\frac{U_q}{R_i}, \quad R_i=\frac{1}{G_i}, \quad\mbox{Äquivalenzbedingung} \\[1ex]
+     I_{qers} &= U_{qers} G_{ers} = \frac{\sum_{\nu=1}^{n} U_{q\nu}}{\sum_{\nu=1}^{n} R_{i\nu}}, \quad\mbox{Reihenschaltung} \\
+    \frac{1}{G_{ers}} &=\sum_{\nu=1}^{n} \frac{1}{G_{\nu}} = R_{ers} =\sum_{\nu=1}^{n} R_{i\nu}
+  
+\end{aligned}$$
+:::
+
+::: frame
+### Zusammenschaltung Ersatzschaltbilder
+
+![image](../fig/lec03s325){width="\\textwidth"}
+:::

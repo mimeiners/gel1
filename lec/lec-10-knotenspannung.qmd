@@ -1,0 +1,194 @@
+## Knotenspannungsverfahren {#sec:knot}
+
+::: frame
+### Knotenspannungen, Bezugsknoten
+
+![image](../fig/lec10s441.pdf){width="\\textwidth"}
+
+-   Nach dem Maschensatz ist die Zweigspannung $U_{ij}$ zwischen den
+    Knoten $i,j$ die Differenz der zugehörigen
+    [Knotenspannungen]{.alert} $U_{ij}=U_{ki0}-U_{kj0}$.
+
+-   Der [Bezugs-]{.alert} oder [Referenzknoten]{.alert} $B$ ist im
+    Prinzip frei wählbar. Er sollte Knoten des Netzwerkes sein, muss es
+    aber nicht. Ein Knoten außerhalb des Netzwerkes erfordert dann $k$
+    Knotenspannungen $\vp_k=\vp_B+U_{kB}$, deswegen wird das Verfahren
+    auch als Knotenpotenzialverfahren bezeichnet.
+:::
+
+::: frame
+### Lösungsmethodik Knotenspannunganalyse
+
+1.  Wahl eines Bezugsknotens im Netzwerk (nach Zweignummerierung und
+    Festlegung der Zweigstromrichtungen).
+
+2.  Für jeden Knoten $i$ wird die Knotenspannung $U_{i0}$ nach dem
+    Bezugsknoten eingeführt (Richtung nach 0 positiv).
+
+3.  Aufstellung der $k-1$ Knotengleichungen für die Zweigströme. Zum
+    Knoten hinfließende Ströme erhalten negatives, wegfließende
+    positives Vorzeichen. Die Zweigströme sind über die $I,U$-Beziehung
+    (Leitwertdarstellung) des zugehörigen Netzwerkelementes durch die
+    Knotenspannungen auszudrücken. []{#enum:443 label="enum:443"}
+
+4.  Darstellung der gesuchten Zweigspannungen durch Knotenspannungen.
+    []{#enum:444 label="enum:444"}
+
+5.  Lösung des Gleichungssystems
+    [\[enum:443\]](#enum:443){reference-type="ref+label"
+    reference="enum:443"} nach den Knotenspannungen, die gemäß
+    [\[enum:444\]](#enum:444){reference-type="ref+label"
+    reference="enum:444"} erforderlich sind.
+:::
+
+::: frame
+### Beispiel Knotenspannungsanalyse
+
+![image](../fig/lec10s442.pdf){width="\\textwidth"}
+
+$$\begin{aligned}
+    \begin{split}
+      K1 &: \quad G_1U_{k1} - G_4(U_{k2}-U_{k1}) \quad = -I_{q} \\
+      K2 &: \quad G_2U_{k2} + G_4(U_{k2}-U_{k1}) - G_3(U_{k3}-U_{k2}) \quad = 0 \\
+      K3 &: \quad G_3U_{k3} + G_5(U_{k3}-U_{k2}) \quad = I_{q}
+    \end{split}
+  
+\end{aligned}$$ $$\begin{aligned}
+    \begin{pmatrix}
+      G_1+G_4 & -G_4 & 0 \\
+      -G_4 & G_2+G_4+G_5 & -G_5 \\
+      0 & -G_5 & G_3+G_5
+    \end{pmatrix}
+                 \begin{pmatrix}
+                   U_{k1} \\ U_{k2} \\ U_{k3}
+                 \end{pmatrix}
+              &=
+                \begin{pmatrix}
+                  -I_q \\ 0 \\ I_{q}
+                \end{pmatrix} \\
+    \begin{pmatrix}
+      G_{11} & \cdots & G_{1n} \\
+      \vdots & \ddots &  \vdots \\
+      G_{n1} & \cdots & G_{nn}
+    \end{pmatrix}
+                        \begin{pmatrix}
+                          U_{k1} \\ \vdots \\ U_{kn}
+                        \end{pmatrix}
+              &= 
+                \begin{pmatrix}
+                  I_{q1} \\ \vdots \\ I_{qn}
+                \end{pmatrix}
+  
+\end{aligned}$$
+:::
+
+::: frame
+### Knotenleitwertmatrix
+
+1.  Hauptdiagonalelement = Knotenleitwert $G_{ii}$. Das ist die (stets
+    positive) Summe aller am Knoten $i$ angeschlossenen Leitwerte;
+
+2.  Matrixelemente außerhalb der Hauptdiagonalen sind die (negativen)
+    Koppelleitwerte zwischen dem Knoten $i$ (Zeile) und benachbarten
+    Knoten $j$ (Spalte). So ist $G_{ij}$ stets gleich der negativen
+    Summe aller zwischen den Knoten $i$ und $j$ liegenden Leitwerte. Für
+    ein Netzwerk nur mit den Elementen $R$,$C$ und $L$ gilt
+    $G_{ij}= G_{ji}$: die Knotenleitwertmatrix ist symmetrisch;
+    []{#enum:klm2 label="enum:klm2"}
+
+3.  Fehlende Verbindungen erhalten den Eintrag 0 am Knoten der
+    Knotenspannung;
+
+4.  Die Zeilensumme (Spaltensumme) gibt den Leitwert zwischen dem
+    betrachteten Knoten (Zeilennummer bzw. Spaltennummer) und
+    Bezugsknoten. Sie verschwindet, wenn zwischen Knoten und Bezug kein
+    "Leitwert" liegt (Rechen- und Kontrollmöglichkeit).
+
+5.  Die Eigenschaften nach
+    [\[enum:klm2\]](#enum:klm2){reference-type="ref+label"
+    reference="enum:klm2"} (Symmetrie zur Hauptdiagonalen, alle
+    Koppelleitwerte negativ) setzen einen Sternbaum voraus, erfordern
+    zum Bezugsknoten hin positiv definierte Knotenspannung und keine
+    gesteuerten Stromquellen.
+:::
+
+::: frame
+### Beispiel Beziehung Knoten-, Zweigspannungen, Knotenleitwertmatrix
+
+Wir veranschaulichen die bisherigen Ergebnisse am Netzwerk mit $z=6$
+Zweigen und $k=4$ Knoten. Knoten 4 sei Bezugsknoten.
+![image](../fig/lec10s443.pdf){width="\\textwidth"} $$\begin{aligned}
+    \begin{pmatrix}
+      G_1+G_4+G_6 & -G_4 & -G_6 \\
+      -G_4 & G_2+G_4+G_5 & -G_5 \\
+      -G_6 & -G_5 & G_3+G_5+G_6
+    \end{pmatrix}
+                    \begin{pmatrix}
+                      U_{k1} \\ U_{k2} \\ U_{k3}
+                    \end{pmatrix}
+                  &=
+                    \begin{pmatrix}
+                      I_{q1} \\ 0 \\ -I_{q3}
+                    \end{pmatrix}
+    \label{eq:1}
+  
+\end{aligned}$$
+:::
+
+:::: frame
+### Knotenspannungen und Zweigspannungen
+
+Die Knotenspannungen $U_{k1} \hdots U_{k3}$ stehen zu den
+Zweigspannungen $U_1 \hdots U_6$ über den Maschensatz in Beziehung:
+$$\begin{aligned}
+    \begin{pmatrix}
+      U_{z1} \\ U_{z2} \\ U_{z3} \\ U_{z4} \\ U_{z5} \\ U_{z6}
+    \end{pmatrix}
+    &= 
+      \begin{pmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & 1 \\
+        1 & -1 & 0 \\
+        0 & -1 & 1 \\
+        1 & 0 & -1
+    \end{pmatrix}
+                \begin{pmatrix}
+      U_{k1} \\ U_{k2} \\ U_{k3}
+    \end{pmatrix} 
+    & \quad
+      \begin{pmatrix}
+        1 & 0 & 0 & 1 & 0 & 1 \\
+        0 & 1 & 0 & -1 & -1 & 0 \\
+        0 & 0 & 1 & 0 & 1 & -1
+      \end{pmatrix}
+                            \begin{pmatrix}
+                              I_{z1} \\ I_{z2} \\ I_{z3} \\ I_{z4} \\ I_{z5} \\ I_{z6}
+                            \end{pmatrix}
+    &=
+      \begin{pmatrix}
+        0 \\ 0 \\ 0
+      \end{pmatrix}
+  
+\end{aligned}$$
+
+::: block
+Maschensatz $$\begin{aligned}
+      \mathbf{U}_z &= \mathbf{A}^T \mathbf{U}_k \\
+      \mathbf{0} &= \mathbf{A} \mathbf{I}_z \\
+    
+\end{aligned}$$
+:::
+::::
+
+::: frame
+### Maschenstromgleichung
+
+$$\begin{aligned}
+    \mathbf{G} \mathbf{U}_k &= \mathbf{I}_{qz} \\
+    \mathbf{U}_k &= \mathbf{G}^{-1} \mathbf{I}_{qz} \\
+    \mathbf{A}^T \mathbf{U}_k &= \mathbf{A}^T \mathbf{G}^{-1} \mathbf{I}_{qz} \\
+    \mathbf{U}_z &= \mathbf{A}^T \mathbf{G}^{-1} \mathbf{I}_{qz} \\
+  
+\end{aligned}$$
+:::

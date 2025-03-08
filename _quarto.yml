@@ -39,13 +39,13 @@ book:
     - index.qmd
     - part: Seminar
       chapters:
-        - class/01_lec.qmd
+        - lec/lec-01-einleitung.qmd
     - part: Hörsaalübungen 
       chapters:
-        - exercise/01_hw.ipynb
+        - hw/hw-01-intro.ipynb
     - part: Tutorium
       chapters:
-        - tutorial/01_tut.qmd
+        - tut/tut-01-intro.qmd
     - references.qmd
     
 bibliography: _bibliography/references.bib

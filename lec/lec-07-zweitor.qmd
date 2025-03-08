@@ -1,0 +1,61 @@
+# Zweitore {#sec:zweitore}
+
+::: frame
+### Zweitorbegriff
+
+![image](../fig/lec07s351.pdf){width="\\textwidth"}
+:::
+
+::::: frame
+### Strom-Spannungs-Beziehungen
+
+![image](../fig/lec07s352.pdf){width="\\textwidth"} $$\begin{aligned}
+  I_1 &= f_{U1}(U_1,U_2) & I_2 &= f_{U2}(U_1,U_2) \\
+  U_1 &= f_{I1}(I_1,I_2) & U_2 &= f_{I2}(I_1,I_2)
+\end{aligned}$$ $$\begin{aligned}
+  U_1 &= Z_{11}I_1 + Z_{12}I_2 \\
+  U_2 &= Z_{21}I_1 + Z_{22}I_2 \\
+  \begin{pmatrix}
+    U_1 \\
+    U_2
+  \end{pmatrix}
+  &=
+  \begin{pmatrix}
+    Z_{11} & Z_{12} \\
+    Z_{21} & Z_{22}
+  \end{pmatrix}
+  \begin{pmatrix}
+    I_1 \\
+    I_2
+  \end{pmatrix} \\
+  \mathbf{U} &= \mathbf{Z} \mathbf{I}
+\end{aligned}$$ ![image](../fig/lec07s353.pdf){width="\\textwidth"}
+
+::: block
+ausgangsseitiger Leerlauf $$\begin{aligned}
+     Z_{11} &= \left . \frac{U_1}{I_1}\right\lvert_{I_2=0} \quad \mbox{Eingangsleerlaufwiderstand} \\
+     Z_{21} &= \left . \frac{U_2}{I_1}\right\lvert_{I_2=0} \quad \mbox{Leerlaufübertragungswiderstand, vorwärts}
+   
+\end{aligned}$$
+:::
+
+::: block
+eingangsseitiger Leerlauf $$\begin{aligned}
+     Z_{22} &= \left . \frac{U_2}{I_2}\right\lvert_{I_1=0} \quad \mbox{Ausgangsleerlaufwiderstand} \\
+     Z_{12} &= \left . \frac{U_1}{I_2}\right\lvert_{I_1=0} \quad \mbox{Leerlaufübertragungswiderstand, rückwärts}
+   
+\end{aligned}$$
+:::
+:::::
+
+::: frame
+### Brückenschaltung
+
+#### Beispiel
+
+![image](../fig/lec07s354.pdf){width="\\textwidth"} $$\begin{aligned}
+     Z_{11} = \left . \frac{U_1}{I_1}\right\lvert_{I_2=0} &= (R_1 + R_2) || (R_2 + R_1) & &= \frac{R_1 + R_2}{2} & &= Z_{22} \\
+     Z_{21} = \left . \frac{U_2}{I_1}\right\lvert_{I_2=0} &= \frac{1}{2I_1} (I_1R_2 - I_1R_1) & &= \frac{R_2 - R_1}{2} & &= Z_{21}
+   
+\end{aligned}$$
+:::

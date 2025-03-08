@@ -1,0 +1,89 @@
+:::: frame
+### Lernziele des Moduls
+
+::: block
+Was Sie aus diesem Module mitnehmen sollen
+
+1.  Grundbegriffe, wie Ladung, Strom, Potential, Spannung, Widerstand
+
+2.  Ohmsches Gesetz
+
+3.  Analyse linearer Gleistromkreis
+
+4.  Zweitore
+
+5.  Allgemeine Verfahren der Netzwerkanalyse
+
+6.  Erste Anwendung von SPICE (Schaltungssimulation), Matlab/Python
+    (Wissenschaftliches Rechnen)
+
+In der Veranstaltung wird Literatur von @paul2012
+[@weisgerber2013a; @buettner2014; @clausert2011] verwandt.
+:::
+::::
+
+# Größen und Gleichungen {#sec:isq}
+
+## Definitionen {#sec:definitionen}
+
+::: frame
+### Definitionen {#definitionen}
+
+-   Physikalische Größen
+
+-   Abgeleitete Größen
+
+-   Dimension
+:::
+
+## Einheiten {#sec:einheiten}
+
+::: frame
+### Einheiten {#einheiten}
+
+-   ISQ (International System of Quantities) Basisgrößen
+
+-   SI (Systèm international d' unités) Basiseinheiten
+
+-   MKSA-System in der Elektrotechnik
+:::
+
+::: frame
+### MKSA (m , kg , s , A)
+
+1.  Die Länge: 1 Meter
+
+2.  Die Masse: 1 Kilogramm
+
+3.  Die Zeit: 1 Sekunde
+
+4.  Die Stromstärke: 1 Ampere
+
+5.  Die Temperatur: 1 Kelvin
+:::
+
+::: frame
+### Vorsätze und Vorsatzzeichen
+:::
+
+## Gleichungen {#sec:gleichungen}
+
+::: frame
+### Gleichungen {#gleichungen}
+
+-   Größengleichungen
+
+-   Zugeschnittene Größengleichungen
+:::
+
+## Darstellung von Daten {#sec:darst-von-daten}
+
+::: frame
+### Darstellung von Daten {#darstellung-von-daten}
+
+-   Tabellen
+
+-   Graphen
+
+-   Diagramme (Balkendiagramm, Kreisdiagramm, Liniendiagramm)
+:::

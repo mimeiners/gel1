@@ -1,0 +1,200 @@
+# Netzwerkanalyseverfahren {#sec:netzw}
+
+## Netzwerkbeschreibung {#sec:netzwerkbeschreibung}
+
+::::: frame
+### Grundaufgabe der Netzwerkanalyse
+
+1.  Gewinnung des Netzwerkes
+
+2.  Wahl des Lösungsverfahrens
+
+3.  Durchführung der Netzwerkanalyse
+
+4.  Diskussion der Lösung
+
+::: block
+Netzwerkgleichungen - 'sche Gesetze
+
+  ------------------ -----------------
+  Knotensatz         $\sum i_n(t)=0$
+  Maschensatz        $\sum u_n(t)=0$
+  Zweigbeziehungen   $u_n = f(i_n)$
+  ------------------ -----------------
+:::
+
+::: block
+Vollständiges 'sches Gleichungssystem
+
+  ------------- -------------------------------------
+  $p=k-1$       unabhängige Knotengleichungen
+  $m=z-(k-1)$   unabhängige Maschengleichungen
+  $z$           $u,i$-Beziehungen der Zweigelemente
+  ------------- -------------------------------------
+:::
+:::::
+
+::: frame
+### Netzwerkbegriffe
+
+-   Punkt (Klemme, node), in dem zwei oder mehrere Netzwerkelemen- te
+    widerstandslos miteinander verbunden sind. Praktisch spricht man nur
+    bei Stromverzweigung von einem Knoten. Gleichwertige
+    graphentheoretische Bezeichnung: Ecke (vertex). Mehrere
+    widerstandslos verbundene Knoten bilden nur einen Knoten.
+
+-   Verbindung zweier Knoten durch ein zweipoliges Netzwerkelement.
+    Gleichwertige graphentheoretische Bezeichnung: Kante (edge). Jedem
+    Zweig entspricht ein Knotenpaar: es ist mit ihm inzident.
+    Verallgemeinert kann ein Zweig auch mehrere (beliebige), vom
+    gleichen Strom durchflossene Netzwerkelemente umfassen.
+
+-   kontinuierliche Folge von Zweigen, die in einem Knoten beginnt und
+    dort wieder endet und keinen Knoten mehr als einmal durchläuft.
+    Gleichwertig: Umlauf, geschlossener Weg (loop).
+
+-   Schleife eines ebenen Graphen, in dessen Innern sich kein anderer
+    Zweig befindet oder gleichwertig: spezielle Schleife, die keine
+    anderen Schleifen (mesh) einschließt.
+
+-   Abstrakte Beschreibung der Netzwerkstruktur (Zahl der Knoten, Lage
+    und Zahl der Zweige) durch Knoten und Linien statt der Zweige.
+:::
+
+::::: frame
+### Netzwerkstruktur
+
+::: block
+Unabhängige Knoten und Maschen Die Eigenschaften eines Netzwerkes werden
+von den Netzwerkelementen und der Netzwerkstruktur oder -topologie
+bestimmt. Das ist die Art ihrer Zusammenschaltung. Sie wird auch als
+*Gerüst* bezeichnet und zeichnerisch durch den [Streckenkomplex]{.alert}
+(engl. graph) ausgedrückt. Die Beschreibung kann gleichwertig durch eine
+[topologische Matrix]{.alert} erfolgen.
+:::
+
+::: block
+Netzwerkgraph Der Netzwerkgraph beschreibt die Verbindung der
+Netzwerkelemente durch Abstraktion der Netzwerkgeometrie. Jedem Knoten
+im Graphen entspricht ein Knoten im Netzwerk und jeder Verbindungslinie
+ein Zweig zwischen zwei Knoten. Er ist Grundlage der Zahl unabhängiger
+Knoten- und Maschengleichungen und kann durch [topologische
+Matrizen]{.alert} (sog. [Inzidenzmatrizen]{.alert}) mathematisch
+beschrieben werden.
+:::
+:::::
+
+::::: frame
+### Vollständiger Baum, Baum- und Verbindungszweige
+
+::: block
+Eigenschaften:
+
+1.  alle Knoten sind direkt oder indirekt miteinander verbunden,
+
+2.  wird ein weiterer Zweig entfernt, so geht Merkmal 1. verloren,
+
+3.  es treten keine Umläufe auf.
+
+Ein vollständiger Baum (engl. tree) ist ein Teilgraph, der keine Umläufe
+besitzt und alle Knoten des Ausgangsgraphen miteinander verbindet. In
+einem Netzwerk mit $k$ Knoten hat der vollständige Baum insgesamt $k-1$
+Zweige.
+:::
+
+::: block
+Baumkomplement Das Baumkomplement bildet als Gesamtheit aller
+Verbindungszweige das [System unabhängiger Zweige]{.alert}. Jeder
+Verbindungszweig gehört genau zu einer Schleife (Masche), die nur aus
+diesem Verbindungszweig und Zweigen des vollständigen Baumes besteht.
+Eine solche Schleife heißt [Fundamentalschleife]{.alert} ([unabhängige
+Masche]{.alert}). Davon gibt es $m = z-(k-1)$.
+:::
+
+![image](../fig/lec08s411.pdf){width="\\textwidth"}
+:::::
+
+::: frame
+### Wahl des Baumes
+
+-   Baum so legen, dass einfache Umläufe entstehen,
+
+-   Stromquellen in Verbindungszweige legen,
+
+-   Spannungsquellen in Baumzweigen anordnen (sie treten im
+    Gleichungssystem allerdings nur einmal auf, wenn sie in
+    Verbindungszweigen liegen),
+
+-   sind nicht alle Ströme gesucht, so sollte ein Baum gewählt werden,
+    in dem gesuchte Ströme in Verbindungszweigen fließen (direkte Lösung
+    nach den Unbekannten),
+
+-   spannungsgesteuerte Quellen sollten nur durch Baumzweigspannungen
+    gesteuert werden,
+
+-   stromgesteuerte Quellen sollten durch Ströme in Verbindungszweigen
+    gesteuert werden
+:::
+
+::: frame
+### Analyseverfahren
+
+Aufsuchen linear unabhängiger Variabler mit dem vollständigen Baum, die
+jeweils nur in einem Zweig des Graphen auftreten. Das sind
+
+-   in den $z-(k-1)$ Verbindungszweigen die Verbindungszweigströme,
+
+-   in den $k-1$ Baumzweigen die Baumzweig- oder Astspannungen,
+
+-   die $k-1$ Knotenspannungen, die den Baumzweigspannungen zugeordnet
+    werden können.
+:::
+
+## Zweigstromverfahren {#sec:zweigstromanalyse}
+
+::: frame
+### Zweigstromverfahren {#zweigstromverfahren}
+
+#### Netzwerkzweig
+
+![image](../fig/lec08s421.pdf){width="\\textwidth"} $$\begin{aligned}
+    U_z &= R_z(I_z+I_{qz})-U_{qz} \\
+    I_z &= G_z(U_z+U_{qz})-I_{qz} \quad \mbox{mit} \quad R_z=1/G_z
+  
+\end{aligned}$$ In einem Netzwerk mit unabhängigen Quellen und
+Widerständen besteht der [allgemeine Zweig]{.alert} zwischen den Knoten
+$i$ und $j$ aus der Reihenschaltung von Widerstand $R$ und
+Spannungsquelle $U_q$, zusätzlich kann eine Stromquelle $I_q$ parallel
+liegen. Längs des Zweiges fällt die [Zweigspannung]{.alert} $U_z$ ab und
+es fließt der [Zweigstrom]{.alert} $I_z$ in einen Zweigknoten hinein und
+zum anderen wieder heraus.
+:::
+
+::: frame
+### Lösungsmethodik Zweigstromanalyse
+
+1.  Fortlaufende Nummerierung der Zweige und Netzwerkelemente,
+    Festlegung der Richtung der Zweigströme und Eliminierung der
+    Zweigspannungen über die $U,I$-Beziehung der Netzwerkelemente.
+
+2.  Auswahl der $k-1$ Knoten und $m=z-(k-1)$ unabhängigen Maschen.
+    Kennzeichnung der Knoten $(K_1,\dots,K_{(k-1)})$ und unabhängigen
+    Maschen $(M_1,\dots ,M_m)$ durch Ringpfeil in gewählter
+    Umlaufrichtung (zweckmäßig Uhrzeigersinn).
+
+3.  Aufstellung der unabhängigen Knoten- und Maschengleichungen mit
+    Einschluss der $U,I$-Beziehungen der Netzwerkelemente.
+
+4.  Lösung des Gleichungssystems nach den $z$ Unbekannten.
+
+5.  Überprüfen der Ergebnisse durch zweckmäßige Vereinfachungen,
+    Sonderfälle, Diskussion und Rückeinsetzen.
+:::
+
+::: frame
+### Beispiel
+
+![image](../fig/lec08s422.pdf){width="\\textwidth"}\
+![image](../fig/lec08s423.pdf){width="\\textwidth"}\
+![image](../fig/lec08s424.pdf){width="\\textwidth"}
+:::

@@ -1,0 +1,72 @@
+# Grundbegriffe {#sec:grundbegriffe}
+
+## Grundaufgaben der Elektrotechnik {#sec:grund-der-elektr}
+
+:::: frame
+### Grundaufgaben der Elektrotechnik {#grundaufgaben-der-elektrotechnik}
+
+1.  Umformung und Übertragung großer Energiemengen
+
+    -   Energie in meachnische (Motoren), Wärme (Heizung), chemische
+        (Elektrolyse), sichtbare Strahlung (Beleuchtung) umgeformt
+
+    -   Leistungselektronik zum Steuern, Umformen und Regeln/Schalten
+
+2.  Gewinnung, Übertragung und Verarbeitung von Informationen
+
+    -   Signale und Nachrichten, drahtgebunden und drahtlos
+
+    -   Quellen/Sender und Emfpänger
+
+3.  Bauelementetechni und Mikroelektronik
+
+    -   Transistoren
+
+    -   IC, ASIC
+
+::: block
+Zusammenwirken von
+
+-   [Mathematik]{.alert} durch Computer- und Informationstechnik
+
+-   [Physik]{.alert} durch Feldtheorie, Festkörperphysik und Optik
+:::
+::::
+
+## Beschreibung elektrotechnischer Systeme {#sec:beschr-elektr-syst}
+
+## Elektrische Ladung {#sec:elektrische-ladung}
+
+## Coulombsches Gesetz / Elektrische Feldstärke {#sec:coulombsches-gesetz}
+
+## Elektrische Stromstärke {#sec:elektr-stromst}
+
+## Elektrische Spannung, elektrisches Potential {#sec:elektr-spann}
+
+::: frame
+### Potentielle Energie
+
+-   Definition der skalaren Größe $W$ aus der Mechanik $$\begin{aligned}
+          \di W &= \mathbf{F} \cdot \di \mathbf{s} = Q \mathbf{E}\cdot \di \mathbf{s} \\
+          \Delta W &= (W_A-W_B) + W_{AB} = \int_A^B \mathbf{F} \cdot \di\mathbf{s} = Q \int_A^B \mathbf{E} \cdot \di\mathbf{s} \equiv Q U_{AB}
+        
+    \end{aligned}$$
+
+-   Definition der Spannung $U_{AB}$ $$\begin{aligned}
+          U_{AB} &= \frac{W_A - W_B}{Q} = \frac{W_{AB}}{Q} = \vp_A - \vp_B
+        
+    \end{aligned}$$
+
+-   Spannungsabfall für $W_A > W_B$ $$\begin{aligned}
+          U_{AB} &= \int_A^B \mathbf{E \cdot \di\mathbf{s}}
+        
+    \end{aligned}$$
+:::
+
+::: frame
+### Einheit der Spannung
+:::
+
+::: frame
+### Größenvorstellungen
+:::

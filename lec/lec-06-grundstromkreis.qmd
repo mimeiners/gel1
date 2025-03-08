@@ -1,0 +1,72 @@
+# Der Grundstromkreis {#sec:der-grundstromkreis}
+
+::: frame
+### Der lineare Grundstromkreis
+:::
+
+::: frame
+### Leistungsumsatz
+
+$$\begin{aligned}
+    \underbrace{U_q I}_{P_q} &= \underbrace{I^2R_i}_{P_i} + \underbrace{I^2R_a}_{P_a}
+  
+\end{aligned}$$
+
+-   [Verbraucherleistung]{.alert} $P_a$
+
+-   [erzeugte elektrische Leistung]{.alert} $P_q$
+
+-   [Verlustleistung]{.alert} $P_i$
+
+-   [Wirkungsgrad]{.alert} $\eta = P_a/P_q$
+
+$$\begin{aligned}
+    \text{Leistungsanpassung} \quad R_a&= R_i \\
+    \text{Verbraucherleistung b. Anpassung} \quad P_a\vert_{max} &= \left . \frac{U^2}{R_a}\right\lvert_{R_a=R_i} = \frac{U_q^2}{4 R_i} =
+  \frac{I_q^2 R_i}{4}
+  
+\end{aligned}$$
+:::
+
+::: frame
+### Der verzweigte Stromkreis
+
+#### Messbereichserweiterung, Spannungs-/Stromrichtiges Messen
+
+![image](../fig/lec06s342a.pdf){width="\\textwidth"} $$\begin{aligned}
+    \frac{I_m}{I} &= \frac{G_m}{G_m + G_P}, \quad G_P=G_m(p_I -1) \\
+    \frac{U_m}{U} &= \frac{R_m}{R_m + R_V}, \quad R_V=G_m(p_V -1)
+  
+\end{aligned}$$
+:::
+
+::: frame
+### Messbrücke zur Widerstandsbestimmung
+
+#### Wheatstonesche Brückenschaltung
+
+![image](../fig/lec06s342.pdf){width="\\textwidth"} $$\begin{aligned}
+    U_{AB}\lvert_{I=0} &= U_{AC} - U_{BC} = \frac{R_3 U_q}{R_x + R_3} - \frac{R_4 U_q}{R_2 + R_4} \\
+    \frac{R_3}{R_x + R_3} &= \frac{R_4}{R_2+R_4} \quad \mbox{d.h.} \quad \frac{R_x}{R_3}=\frac{R_2}{R_4}  
+  
+\end{aligned}$$
+:::
+
+::: frame
+### Zweipoltheorie
+:::
+
+::::: frame
+### Überlagerungssatz/Superpositionsprinzip
+
+::: block
+Helmholtz 1853 In einem linearen physikalischen System, auf das mehrere
+Ursachen einwirken, entsteht die Gesamtwirkung durch Summation
+(Überlagerung) der Teilwirkungen als Folge der Teilursachen
+:::
+
+::: block
+Linearität Ein physikalisches System ist linear, wenn der
+Überlagerungssatz zutrifft und umgekehrt.
+:::
+:::::

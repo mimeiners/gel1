@@ -1,0 +1,113 @@
+# Widerstand, resistiver Zweipole {#sec:resistive-zweipole}
+
+::: frame
+### Elektrischer Widerstand
+
+-   Materialien haben einen Widerstand
+
+-   Ohmsche Widertände als Bauelemente in der Elektrotechnik
+
+-   ungewollte, sog. parasitäre Widerstände
+
+-   [Leitfähigkeit]{.alert} von Stoffen aller Art als physikalische
+    Ursache
+
+![image](../fig/lec04s331.pdf){width="\\textwidth"}
+:::
+
+:::: frame
+### Linearer resistiver Zweipol
+
+::: definition
+Der Quotient aus dem Spannungsabfall $U_{AB}$ zwischen zwei
+Potenzialflächen A ($\vp_A$ = const) und B ($\vp_B$ = const) und dem
+Strom $I$ durch die zugehörigen Querschnitte $A_1$, $A_2$ eines
+Strömungsfeldes heißt Widerstand $R_{AB}$ des Volumens, in dem sich das
+Strömungsfeld ausbildet.
+:::
+
+$$\begin{aligned}
+    R_{AB} &= \frac{U_{AB}}{I}, \quad [R]=\frac{[U]}{[I]}=1 \frac{\si{\volt}}{\si{\ampere}} = \SI{1}{\ohm} \\
+    R_{AB} &= \frac{U_{AB}}{I}= const \quad \mbox{Ohmsches Gesetz}
+  
+\end{aligned}$$
+::::
+
+::: frame
+### Symbole
+
+![image](../fig/lec04s332.pdf){width="\\textwidth"}
+:::
+
+::: frame
+### Linienhafter Leiter
+
+![image](../fig/lec04s333.pdf){width="\\textwidth"} $$\begin{aligned}
+     R &= \vr \frac{l}{A} = \frac{1}{\sigma}\frac{l}{A} \\
+     \vr &= \frac{1}{\sigma} \\
+     [\vr]&= \SI{1}{\ohm\milli\metre\squared\per\metre} \quad \SI{1}{\ohm\centi\metre} \\
+     [\sigma]&= \SI{1}{\siemens\metre\per\milli\metre\squared} \quad \SI{1}{\siemens\per\centi\metre}
+   
+\end{aligned}$$
+:::
+
+::: frame
+### Leitwert
+
+$$\begin{aligned}
+    G_{AB} &= \frac{I}{U_{AB}} = \frac{1}{R_{AB}} \\
+    [G] &= \frac{[I]}{[U]} = 1 \frac{\si{\ampere}}{\si{\volt}}=\SI{1}{\siemens}=1\frac{1}{\si{\ohm}}
+  
+\end{aligned}$$
+:::
+
+### Zusammenschaltung resistiver Zweipole {#sec:zusamm-resist}
+
+::: frame
+### Reihen- und Parallelschaltung
+
+#### Zusammenschaltung
+
+![image](../fig/lec04s334.pdf){width="\\textwidth"} $$\begin{aligned}
+    U_{AB}&=\sum_{n=1}^m U_n = I \sum_{n=1}^m R_n = I R_{ers}, \quad R_{ers}= \sum_{n=1}^m R_n, \quad \mbox{Reihenschaltung}\\
+    I&=\sum_{n=1}^m I_n = U_{AB} \sum_{n=1}^m G_n = U_{AB} G_{ers}, \quad G_{ers}= \sum_{n=1}^m G_n \quad\mbox{Parallelschaltung}  
+  
+\end{aligned}$$
+:::
+
+::: frame
+### Widerstandszusammenschaltung
+
+![image](../fig/lec04s335.pdf){width="\\textwidth"}
+:::
+
+::: frame
+### Spannungs- und Stromteiler
+
+![image](../fig/lec04s336.pdf){width="\\textwidth"} $$\begin{aligned}
+     \frac{U_n}{U_{ges}} &= \frac{R_n}{R_{ges}} \quad \mbox{Spannungsteilerregel} \\
+     \frac{I_n}{I_{ges}} &= \frac{G_n}{G_{ges}} \quad \mbox{Stromteilerregel}
+   
+\end{aligned}$$
+:::
+
+::: frame
+### Stern-Dreieck-Umwandlung
+
+![image](../fig/lec04s337.pdf){width="\\textwidth"} $$\begin{aligned}
+    G_{12} &= \frac{G_{10}G_{20}}{\sum G}, & G_{13} &= \frac{G_{10}G_{30}}{\sum G}, & G_{23} &= \frac{G_{20}G_{30}}{\sum G},
+    \quad\mbox{Stern-Dreieck} \\
+    R_{10} &= \frac{R_{12}R_{13}}{\sum R}, & R_{20} &= \frac{R_{12}R_{23}}{\sum R}, & R_{30} &= \frac{R_{13}R_{23}}{\sum R},
+    \quad\mbox{Dreieck-Stern}
+  
+\end{aligned}$$ $$\begin{aligned}
+  \sum G &= G_{10} + G_{20} = G_{30} & \sum R &= R_{12} + R_{13} + R_{23} 
+  
+\end{aligned}$$
+:::
+
+::: frame
+### Anwendungsbeispiel der Umwandlung
+
+![image](../fig/lec04s338.pdf){width="\\textwidth"}
+:::

@@ -1,0 +1,58 @@
+# Temperaturverhalten resistiver Zweipole {#sec:temp-resist-zweip}
+
+::: frame
+### Temperaturverhalten resistiver Zweipole {#temperaturverhalten-resistiver-zweipole}
+
+-   bei Metallen steigt der Widerstand mit der Temperatur, weil die
+    Atome intensivere Gitterschwingungen ausführen und sich dadurch die
+    Wahrscheinlichkeit eines Zusammenstoßes mit hindurchfließenden
+    Elektronen erhöht
+
+-   bei Halbleitern wächst die Ladungsträgerzahl im Bereich der
+    Eigenleitung mit der Temperatur durch Aufbrechen von
+    Gitterbindungen, wodurch der Widerstand sinkt
+
+$$\begin{aligned}
+    \vr(T) &= \vr(T_0)\left(1 + \alpha_{T_0} \Delta T \right) \\
+    \alpha &= \mbox{Temperaturkoeffizient oder -beiwert (TK)}
+  
+\end{aligned}$$
+
+-   positiver TK, [Kaltleiter (PTC)]{.alert}
+
+-   negativer TK, [Heissleiter (NTC)]{.alert}
+
+-   Raumtemperatur $T_0$=20 °C
+:::
+
+::: frame
+### Widerstand als Bauelement
+
+Typische Merkmale bilden [Nennwiderstand]{.alert} und
+[Toleranz]{.alert}, der TK und die (bauformabhängige)
+[Leistungsbelastbarkeit]{.alert} (oft ausgedrückt durch eine [maximale
+Dauerspannung]{.alert}).
+
+-   positiver TK, [Kaltleiter (PTC)]{.alert}
+
+-   negativer TK, [Heissleiter (NTC)]{.alert}
+
+-   Raumtemperatur $T_0$=20 °C
+:::
+
+::: frame
+### Allgemeine resistive Zweipole
+
+![image](../fig/lec05s339.pdf){width="\\textwidth"}
+:::
+
+::: frame
+### Kleinsignalwiderstand
+
+![image](../fig/lec05s340.pdf){width="90%"} $$\begin{aligned}
+    r &= \left . \frac{\di U}{\di I}\right\lvert_{U_A,I_A}, \quad \lvert\Delta I\rvert, \lvert\Delta U\rvert \leq
+    0.1(\lvert I_A\rvert,\vert U_A\rvert) \\
+    g &= \left . \frac{\di I}{\di U}\right\lvert_{U_A,I_A}
+  
+\end{aligned}$$
+:::
